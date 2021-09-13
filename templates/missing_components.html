@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+    <table>
+        <tr>
+            <th>Код заказа</th>
+            <th>Медикамент</th>
+            <th>Количество</th>
+        </tr>
+        
+        {% for value in result %}
+        
+        <tr>
+        
+            <td>{{value[0]}}</td>
+            <td>{{value[1]}}</td>
+            <td>{{value[2]}}</td>
+        </tr></a>
+        {% endfor %}
+    </table>
+     
+{% endblock body%}

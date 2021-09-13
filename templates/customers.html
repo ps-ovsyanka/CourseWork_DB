@@ -1,0 +1,49 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+    <div style="display: inline;margin-right: 100%; white-space: nowrap;">
+        <form method="POST">
+            <h3 style="margin-right: 10px;">Число покупателей: {{amount}}</h3>
+            <select name="status" style="margin-right: 10px;">
+                <option>Не указано</option>
+                {% if status == 2 %}
+                <option selected="selected" value="Готов">Не забрали заказ</option>
+                <option value="Нет на складе">Ждут прибытия на склад</option>
+                {% elif status== 3%}
+                <option value="Готов">Не забрали заказ</option>
+                <option selected="selected" value="Нет на складе">Ждут прибытия на склад</option>
+                {% else %}
+                <option value="Готов">Не забрали заказ</option>
+                <option value="Нет на складе">Ждут прибытия на склад</option>
+                {% endif %}
+            </select>
+            <select name="type" style="margin-right: 10px;">
+                <option>Не указано</option>
+                {% for value in res_type %}
+                <option>{{value[0]}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Выбрать">
+        </form>
+    </div>
+    <div style="display: inline;">
+        <table>
+            <tr>
+                <th>ФИО</th>
+                <th>Телефон</th>     
+                <th>Адрес</th>
+            </tr>
+            
+            {% for value in result %}
+            <tr>
+                <td>{{value[0]}}</td>
+                <td>{{value[1]}}</td>
+                <td>{{value[2]}}</td>            
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+     
+{% endblock body%}

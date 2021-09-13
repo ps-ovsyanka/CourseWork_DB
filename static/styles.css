@@ -1,0 +1,186 @@
+
+body{
+    margin: 0px;
+    font-family: monospace;
+    text-align: center;
+    background-color: lightcyan;
+}
+
+.content{
+  display: -webkit-inline-box;
+  text-align: -webkit-center;
+}
+
+#top-board {
+
+    margin: 0px;
+    height: 50px;  
+    background: skyblue;  
+    background-image: url('img/top-border.png');
+    background-size: contain;
+    background-repeat: repeat-x; 
+    
+}
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: center;
+    color: darkblue;
+    font-size: 16px;
+    min-width: 50px;
+    border-collapse: collapse;
+}
+table tr {
+  border-bottom: solid 2px cyan;
+} 
+th {
+  padding: 5px 15px 5px 15px;
+  text-align: center;
+}
+td {
+  padding: 5px 15px 5px 15px;
+  align-content: center;
+}
+
+
+        
+       
+
+      
+      
+nav {
+    text-align: center;
+    background: skyblue;
+    margin-bottom: 50px;
+    padding-left: 15%;
+    border-bottom: solid 2px darkblue;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+nav a {
+  text-decoration: none;
+  display: block;
+  transition: .3s linear;
+}
+.topmenu > li {
+  float: left;
+  position: relative;
+  border-left: 1px solid darkblue;
+  border-right: 1px solid darkblue;
+  min-width: 200px;
+}
+
+.topmenu > li > a {  
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: darkblue;
+  letter-spacing: 1.5px;
+}
+.topmenu > li:hover > a{
+    color: #55209db3;
+}
+
+.topmenu .fa, 
+.submenu .fa {
+  margin-left: 5px;
+  color: inherit;
+}
+.submenu {
+  position: absolute;
+  width: -webkit-fill-available;
+  z-index: 5;
+  min-width: 199px;
+  background: skyblue;
+  border-top: 2px solid darkblue;
+  border-left: 1px solid darkblue;
+  border-right: 2px solid darkblue;
+  visibility: hidden;
+  opacity: 0; 
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+  transition: .3s linear;  
+}
+.submenu li {position: relative;}
+.submenu li a {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #042b97;
+    letter-spacing: 1px;
+    border-bottom: 2px solid darkblue;
+}
+.submenu .submenu {
+  position: absolute;
+  left: 100%;
+  top: -1px;
+  transition: .3s linear;
+}
+nav li:hover > .submenu {
+  transform: rotateX(0deg);
+  visibility: visible;
+  opacity: 1;
+}
+
+nav li:hover > .submenu > li:hover{
+    background: paleturquoise;
+}
+
+form{
+  padding: 10px 10px 10px 20px;
+  border: solid 2px cyan;
+  display: table;
+  text-decoration: none;
+  background-color: skyblue;
+}
+
+form h3 {
+  display: inline;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: azure;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+input[type=submit]{
+  color: #042b97;
+  background-color: palegreen;
+  margin-top: 10px;
+  border: solid 1px darkgreen;
+  line-height: 1.6;
+  font-size: 15px;
+}
+input, input[type=number], select {
+  margin-bottom: 3px;
+  font-size: 14px;
+  padding: 1px 2px;
+}
+
+input[type=submit] {
+  width: auto;
+}
+
+form select option{
+  height: 20px;
+}
+
+form div{
+  float: left;
+  margin-right: 10px;
+  text-align: left;
+}
+
+form ._1 {
+  text-align: right;
+}
+form ._2 {
+  text-align: left;
+}

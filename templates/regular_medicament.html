@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+<div style="display: inline;margin-right: 100%; white-space: nowrap;">
+    <form method="POST">
+        <select name="type" style="margin-right: 10px;">
+            <option>Не указано</option>
+            {% for i in range(res_type|length) %}
+                {% if i+2 == med %}
+                    <option selected="selected">{{res_type[i][0]}}</option>
+                {% else %}
+                    <option>{{res_type[i][0]}}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <input type="submit" value="Выбрать">
+    </form>
+</div>
+
+    <div style="display: inline;">
+        <table>
+            <caption style="font-size: 20px; margin-bottom: 10px;">Наиболее часто используемые медикаменты</caption>
+            <tr>
+                <th>Название</th>
+                <th>Кол-во заказов</th>     
+            </tr>
+            
+            {% for value in result %}
+            <tr>
+                <td>{{value[0]}}</td>
+                <td>{{value[1]}}</td>          
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+     
+{% endblock body%}

@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch solver",
+            "request": "launch",
+            "mainClass": "solver",
+            "projectName": "Pharmacy_58e4d197"
+        },
+        {
+            "type": "java",
+            "name": "Launch bbb",
+            "request": "launch",
+            "mainClass": "bbb",
+            "projectName": "Pharmacy_58e4d197"
+        },
+        {
+            "type": "java",
+            "name": "Launch first",
+            "request": "launch",
+            "mainClass": "first",
+            "projectName": "Pharmacy_58e4d197"
+        },
+        {
+            "name": "Python: Текущий файл",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

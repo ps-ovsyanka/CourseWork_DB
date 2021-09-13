@@ -1,0 +1,50 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+    <div style="display: inline;margin-right: 100%; white-space: nowrap;">
+        <form method="POST">
+            
+            <h3 style="margin-right: 10px;">Число покупателей: {{amount}}</h3>
+            <select name="type" style="margin-right: 10px;">
+                <option>Не указано</option>
+                {% for i in range(res_type|length) %}
+                    {% if i+2 == type %}
+                        <option selected="selected">{{res_type[i][0]}}</option>
+                    {% else %}
+                        <option>{{res_type[i][0]}}</option>
+                    {% endif %}
+                   
+                {% endfor %}
+            </select>
+            <select name="period" style="margin-right: 10px;">
+                {% if period == 2 %}<option>Все время</option><option selected="selected">Неделя</option><option>Месяц</option>
+                {% elif period == 3 %}<option>Все время</option><option>Неделя</option><option selected="selected">Месяц</option>
+                {% else %}<option selected="selected">Все время</option><option>Неделя</option><option>Месяц</option>
+                {% endif %}
+            </select>
+            <input type="submit" value="Выбрать">
+        </form>
+    </div>
+    <div style="display: inline;">
+        
+        <table>
+            <caption style="font-size: 20px; margin-bottom: 10px;">Покупатели за период</caption>
+            <tr>
+                <th>ФИО</th>
+                <th>Телефон</th>     
+                <th>Адрес</th>
+            </tr>
+            
+            {% for value in result %}
+            <tr>
+                <td>{{value[0]}}</td>
+                <td>{{value[1]}}</td>
+                <td>{{value[2]}}</td>            
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+     
+{% endblock body%}

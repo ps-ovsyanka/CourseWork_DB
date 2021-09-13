@@ -1,0 +1,66 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+    <div style="display: inline;margin-right: 100%; white-space: nowrap;">
+        <form method="POST">
+            <h3 style="margin-right: 10px;">Число заказов: {{amount}}</h3>
+            <select name="status" style="margin-right: 10px;">
+                {% if status == 2 %}
+                <option>Не указано</option>
+                <option selected="selected">В производстве</option>
+                <option>Нет на складе</option>
+                {% elif status== 3%}
+                <option>Не указано</option>
+                <option>В производстве</option>
+                <option selected="selected">Нет на складе</option>
+                {% else %}
+                <option selected="selected">Не указано</option>
+                <option>В производстве</option>
+                <option>Нет на складе</option>
+                {% endif %}
+                
+            </select>
+            <input type="submit" value="Выбрать">
+        </form>
+    </div>
+    <div style="display: inline;">
+        <table>
+            <tr>
+                <th>Код заказа</th>
+                <th>Медикамент</th>     
+                <th>Кол-во</th>
+                <th>Покупатель</th>
+                <th>Время регистрации</th>
+                <th>Время готовности</th>
+                <th>Статус</th>
+                <th></th>
+            </tr>
+            
+            {% for value in result %}
+            <tr>
+                
+                <td>{{value[0]}}</td>
+                <td>{{value[1]}}</td>
+                <td>{{value[2]}}</td>
+                <td>{{value[3]}}</td>
+                <td>{{value[4]}}</td>
+                {% if value[5] == None %}
+                <td></td>
+                {% else %}
+                <td>{{value[5]}}</td>
+                {% endif %}
+                <td>{{value[6]}}</td>
+                <td>
+                    {% if value[6] == 'Готов' %}
+                    <a href="/accept_order?id={{value[0]}}">Выдан</a>
+                    {% endif %}
+                    
+                </td>            
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+     
+{% endblock body%}

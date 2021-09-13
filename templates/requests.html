@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+    <table id='requests'>
+        <caption style="font-size: 20px; margin-bottom: 10px;">Заявки на медикаменты</caption>
+        <tr>
+            <th>Медикамент</th>
+            <th>Количество</th>
+            <th>Дата регистрации</th>
+            <th>Дата выполнения</th>
+        </tr>
+        
+        {% for value in result %}
+        <tr>
+            
+            <td>{{value[1]}}</td>
+            <td>{{value[2]}}</td>
+            <td>{{value[3]}}</td>
+            {% if value[4] == None %}
+            <td></td>
+            {% else %}
+            <td>{{value[4]}}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+     
+{% endblock body%}

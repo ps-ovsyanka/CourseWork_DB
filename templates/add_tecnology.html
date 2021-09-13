@@ -1,0 +1,52 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+    <form  enctype="multipart/form-data" method="POST">
+        <h2>Добавление технологии производства</h2>
+        <div class="_1">
+            <h3>Медикамент</h3>
+            <br>
+            <h3>Технология производства</h3>
+            <br>
+            <br>
+            <h3>Время приготовления</h3>
+            <br>
+            <h3>Компонент 1</h3>
+            <br>
+            {% for i in range(count) %}
+            <h3>Компонент {{i + 2}}</h3>
+            <br>
+            {% endfor %}
+        </div>
+        <div class="_2">
+            <select name="med">
+                {% for value in result %}
+                <option>{{value[0]}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <textarea name="techology" style="max-width: 250px; max-height: 35px;">
+            </textarea>
+            <br>
+            <input type="number" min=1 max="999" name="life_1" style="width: 50px;" >
+            <select name="life_2">
+                <option>minuts</option>
+                <option>hours</option>
+            </select>
+            <br>
+            <input name="comp_0" maxlength="20">
+            <br>
+            {% for i in range(count) %}
+            <input name="comp_{{i+1}}" maxlength="20">
+            <br>
+            {% endfor %}
+            <input type="submit" style="width: 20px;" name="act" value="+">
+            <input type="submit" style="width: 20px;" name="act" value="-">            
+        </div>
+        <br>           
+        <input type="submit" value="Добавить">
+    </form>
+     
+{% endblock body%}

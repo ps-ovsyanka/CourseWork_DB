@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+    <div style="display: inline;margin-right: 100%; white-space: nowrap;">
+        <form method="POST">
+            <select name="type" style="margin-right: 10px;">
+                <option>Не указано</option>
+                {% for i in range(res_type|length) %}
+                    {% if i+2 == type %}
+                        <option selected="selected">{{res_type[i][0]}}</option>
+                    {% else %}
+                        <option>{{res_type[i][0]}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <input type="submit" value="Выбрать">
+        </form>
+    </div>
+    <div style="display: inline;">
+        <table>
+            <tr>
+                <th>Медикамент</th>     
+                <th style="max-width: 400px;" >Технология приготовления</th>
+                <th>Время приготовления</th>
+            </tr>
+            
+            {% for value in result %}
+            <tr>
+                
+                <td>{{value[0]}}</td>
+                <td  style="max-width: 400px;" >{{value[1]}}</td>
+                <td>{{value[2]}}</td>           
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+     
+{% endblock body%}

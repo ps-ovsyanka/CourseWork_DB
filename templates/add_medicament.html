@@ -1,0 +1,44 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+    <form  method="POST">
+        <div class="_1">
+            <h3>Медикамент</h3>
+            <br>
+            <h3>Тип</h3>
+            <br>
+            <h3>Цена</h3>
+            <br>
+            <h3>Срок годности</h3>
+            <br>
+            <h3>Критическая норма</h3>
+            <br>
+        </div>
+        <div class="_2">
+            <input name="med" maxlength="50" style="min-width: 200px;" required>
+            <br>
+            <select name="type">
+                {% for value in result %}
+                <option>{{value[0]}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="number" min=1 max="9999" name="price" style="min-width: 200px;" required>
+            <br>
+            <input type="number" min=1 max="99" name="life_1" required >
+            <select name="life_2" required>
+                <option>days</option>
+                <option>months</option>
+                <option>years</option>
+            </select>
+            <br>
+            <input type="number" name="norm" min=1 max="50" required>
+        </div>
+        <br>           
+        <input type="submit" value="Добавить">
+
+    </form>
+     
+{% endblock body%}

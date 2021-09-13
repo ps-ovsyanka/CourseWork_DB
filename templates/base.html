@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <title>Аптека</title>
+        <link rel="stylesheet" href="static/styles.css">
+        <link rel="shortcut icon" href="static/img/icon.png">
+        
+    </head>
+    <body>
+        <div id="top-board"></div>
+        
+        <nav>
+            <ul class="topmenu">
+                <li><a href="/catalog" class="active">Каталог<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="/add_medicament">Добавить в каталог</a></span></a></li>
+                        <li><a href="/critical_norm_list">Список критического запаса</a></span></a></li>
+                        <li><a href="/min_stock">Список минимального запаса</a></span></a></li>
+                        <li><a href="/regular_medicament">Список наиболее используемых</a></span></a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/technology" class="active">Технологии изготовления<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="/add_tecnology">Добавить новую</a></span></a></li>
+                    </ul>
+                </li>
+                <li><a href="/orders" class="active">Заказы<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="/add_order">Добавить заказ</a></span></a></li>
+                        <li><a href="/missing_components">Отсутствующие медикаменты</a></span></a></li>
+                    </ul>
+                </li>
+                <li><a href="/requests" class="active">Заявки<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="/create_request">Создать заявку</a></span></a></li>
+                        <li><a href="/complete_request">Отметить выполненные</a></span></a></li>
+                    </ul>
+                </li>
+                <li><a href="/customers" class="active">Покупатели<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="/regular_customers">Постоянные Покупатели</a></span></a></li>
+                        <li><a href="/periods_customers">Покупатели за период</a></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+        {% block body %} {% endblock %}
+        </div>
+ 
+    </body>
+</html>

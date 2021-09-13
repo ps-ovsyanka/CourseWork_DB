@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+<form  method="POST">
+    <h2>Создание заявки</h2>
+
+    <div class="_1">
+        <h3>Медикамент</h3>
+        <br>
+        <h3>Количество</h3>
+        <br>
+    </div>
+        
+    <div class="_2">
+        <select name="med">
+            {% for value in result %}
+            <option>{{value[0]}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="number" min="1" max="50" name="count" required style="width: 50px;">
+        <br>
+    </div>
+    <br>
+    <input type="submit" value="Создать">       
+</form>
+    
+     
+{% endblock body%}

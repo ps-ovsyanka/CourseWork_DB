@@ -1,0 +1,62 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+        <form id="del" method="POST" style="display: none;">
+            
+        </form>
+        <table>
+            <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Цена</th>
+                <th>На складе</th>
+            </tr>
+            {% for value in result1 %}
+            <tr>
+                <td>{{value[0]}}</td>
+                <input form="del" type="hidden" name="med" value="{{value[0]}}">
+                <td>{{value[1]}}</td>
+                <td>{{value[2]}}</td>
+                <td>{{value[3]}}</td>
+            </tr></a>
+            {% endfor %}
+            
+            {% for value in result2 %}
+            <tr  style="height: 60px;">
+                <td><input form="del" type="submit" name="act" value="Удалить информацию о технологии"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="3">Технология приготовления</th>
+                <th>Время приготовления</th>
+            </tr>
+            <tr>
+                <td colspan="3" style="max-width: 500px;">{{value[0]}}</td>
+                <td>{{value[1]}}</td>
+            </tr>            
+            <tr  style="height: 60px;">
+                <td>     </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th style="text-align: left; padding-left: 80px;">Компоненты</th>
+                <th>Цена</th>
+                <th colspan="2"></th>
+            </tr>
+            
+                {% for value in result3 %}
+                <tr>
+                    <td>{{value[0]}}</td>
+                    <td>{{value[1]}}</td>
+                </tr>
+                {% endfor %}
+            
+            {% endfor %}
+        </table>
+     
+{% endblock body%}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+    <div style="display: inline;">
+        <table>
+            <caption style="font-size: 20px; margin-bottom: 10px;">Постоянные Покупатели</caption>
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во заказов</th>     
+            </tr>
+            
+            {% for value in result %}
+            <tr>
+                <td>{{value[0]}}</td>
+                <td>{{value[1]}}</td>          
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+     
+{% endblock body%}

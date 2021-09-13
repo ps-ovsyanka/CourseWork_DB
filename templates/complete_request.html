@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+<form method="POST">
+    <table>
+        <tr>
+            <th>Медикамент</th>
+            <th>Количество</th>
+            <th>Дата регистрации</th>
+            <th></th>
+        </tr>
+        
+        {% for value in result %}
+        <tr>
+            
+            <td>{{value[2]}}</td>
+            <td>{{value[3]}}</td>
+            <td>{{value[4]}}</td>     
+            <td><input type="checkbox" name="ch_{{value[0]}}" value={{value[1]}}></td>   
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="Отметить как выполненные">
+</form>
+    
+     
+{% endblock body%}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+    <table>
+        <tr>
+            <th>Медикамент</th>
+            <th>Цена</th>
+            <th>На складе</th>
+            <th></th>
+        </tr>
+        
+        {% for value in result %}
+        
+        <tr>
+        
+            <td>{{value[0]}}</td>
+            <td>{{value[1]}}</td>
+            <td>{{value[2]}}</td>
+            <td><a href="/medicament_info?id={{value[0]}}" style="display: table-row;">Подробнее</a></td>
+        </tr></a>
+        {% endfor %}
+    </table>
+     
+{% endblock body%}

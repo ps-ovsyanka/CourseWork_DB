@@ -1,0 +1,52 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+
+    <form  method="POST">
+        <h2>Регистрация заказа</h2>
+        <div class="_1">
+            <h3>ФИО</h3>
+            <br>
+            <h3>Телефон</h3>
+            <br>
+            <h3>Адрес</h3>
+            <br>
+            <h3>Медикамент</h3>
+            <br>
+            <h3>Количество</h3>
+            <br>
+            <h3>ФИО Врача</h3>
+            <br>
+            <h3>Диагноз</h3>
+            <br>
+        </div>
+        <div class="_2">
+            <input name="name" maxlength="60" required value="{{name}}">
+            <br>
+            <input name="phone" maxlength="11" pattern="\d{11}" {{msg_req}}>
+            <br>
+            <input name="adres" maxlength="200" {{msg_req}}>
+            <br>
+            <select name="med" value="{{name}}">
+                {% for value in result %}
+                <option>{{value[0]}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="number" min=1 max="10" name="amount" required value="{{amount}}">
+            <br>
+            <input name="name_doctor" maxlength="60" required value="{{name_doctor}}">
+            <br>
+            <input name="diagnos" maxlength="20" required value="{{diagnos}}">
+        </div>
+        <br>           
+        <input type="submit" value="Добавить">
+        
+    </form>
+    <br>
+    <span style="display: block;">{{msg}}</span>
+        
+    
+     
+{% endblock body%}
